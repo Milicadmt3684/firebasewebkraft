@@ -1,44 +1,20 @@
 <!-- contact.component.html -->
-<body>
 <form (ngSubmit)="createContact()" [formGroup]="contactForm" novalidate autocomplete="off">
-  <h2>Napišite nam poruku <i class='far fa-comments' style='font-size:36px'></i> </h2>
-
-  <label for="name">Ime:</label>
+  <label for="name">Name:</label>
   <input type="text" id="name" name="name" formControlName="name" required>
-  <div *ngIf="contactForm.get('name')?.hasError('required') && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)" class="error-message">
-    Ime je obavezno.
-  </div>
-  <div *ngIf="contactForm.get('name')?.hasError('pattern') && (contactForm.get('name')?.dirty || contactForm.get('name')?.touched)" class="error-message">
-    Ime mora sadrzati samo slova.
-  </div>
+  <!-- Add error messages for validation if needed -->
 
-  <label for="lastname">Prezime:</label>
+  <label for="lastname">Lastname:</label>
   <input type="text" id="lastname" name="lastname" formControlName="lastname" required>
-  <div *ngIf="contactForm.get('lastname')?.hasError('required') && (contactForm.get('lastname')?.dirty || contactForm.get('lastname')?.touched)" class="error-message">
-    Prezime je obavezno.
-  </div>
-  <div *ngIf="contactForm.get('lastname')?.hasError('pattern') && (contactForm.get('lastname')?.dirty || contactForm.get('lastname')?.touched)" class="error-message">
-    Prezime mora sadrzati samo slova.
-  </div>
+  <!-- Add error messages for validation if needed -->
 
   <label for="email">Email:</label>
   <input type="email" id="email" name="email" formControlName="email" required>
-  <div *ngIf="contactForm.get('email')?.hasError('required') && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)" class="error-message">
-    Email je obavezan.
-  </div>
-  <div *ngIf="contactForm.get('email')?.hasError('pattern') && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)" class="error-message">
-    Email mora biti u odgovarajucem formatu.
-  </div>
+  <!-- Add error messages for validation if needed -->
 
-  <label for="message">Poruka:</label>
+  <label for="message">Message:</label>
   <textarea id="message" name="message" formControlName="message" required></textarea>
-  <div *ngIf="contactForm.get('message')?.hasError('required') && (contactForm.get('message')?.dirty || contactForm.get('message')?.touched)" class="error-message">
-    Poruka je obavezna.
-  </div>
+  <!-- Add error messages for validation if needed -->
 
-  <button type="submit">Potvrdi</button>
-
-  <!-- Poruke o (ne)uspehu -->
-  <div *ngIf="successContactMessage" class="success-contact-message">{{ successContactMessage }}</div>
-  <div *ngIf="errorContactMessage" class="error-contact-message">{{ errorContactMessage }}</div>
+  <button type="submit">Submit</button>
 </form>
